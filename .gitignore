@@ -1,0 +1,5 @@
+# coopa 的构建产物、字库缓存、检查结果
+.coopa/
+
+# 配音合成的中间缓存(edge-tts 的 mp3,可用 gen_voices.py 重新生成)
+tools/voices/build/

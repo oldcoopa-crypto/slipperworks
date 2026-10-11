@@ -1,0 +1,18 @@
+# 自查:每次推送都用官方检查跑一遍(和审核时一样;审核只认官网触发的那次)。
+# 结果在 Actions 页面;截图、日志、能玩的网页版在这次运行的 Artifacts 里。模板仓库自己不跑(它的 id 还是 mygame)。
+name: 自查
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    if: github.repository != 'coopa-store-dev/coopa-game-template'
+    uses: coopa-store-dev/coopa-store/.github/workflows/check-core.yml@main
+    with:
+      repo: ${{ github.repository }}
+      ref: ${{ github.sha }}
