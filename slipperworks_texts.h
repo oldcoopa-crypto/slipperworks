@@ -65,6 +65,8 @@
 #define DT_BAG_TIP_MAX "● 卖1  长按● 卖光  已满级"
 #define DT_BAG_TIP_BACK "● 进入功能界面"
 #define DT_TD_GO "接着上次的现场做"
+#define DT_TD_FIRST "第一次开工:先看开场剧!"
+#define DT_RESTART "重新开始"
 #define DT_TD_HEAT "微辣:桶宽价高 · 特辣:桶窄价低"
 #define DT_TD_NEW "清空全部进度,要确认两遍"
 #define DT_TD_MENU "退出游戏回卡片"

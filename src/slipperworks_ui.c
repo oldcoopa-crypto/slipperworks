@@ -86,13 +86,17 @@ void slipperworks_ui_title(uint8_t sel, const slipperworks_save_t *sv, bool rpg_
                                                        : DT_HEAT_MID;
     static char heat_item[24];
     snprintf(heat_item, sizeof(heat_item), DT_HEAT_ITEM, heat_name);
-    const char *labels[T_PILLS] = {DT_GO, heat_item, DT_NW_TITLE, DT_MENU};
+    // 还没看过开场剧 = 新的一局:首项叫「新的工坊」,描述也跟着换
+    int first_go = !(sv->flags & 0x40u);
+    static char go_item[24];
+    snprintf(go_item, sizeof(go_item), "%s", first_go ? DT_NW_TITLE : DT_GO);
+    const char *labels[T_PILLS] = {go_item, heat_item, DT_RESTART, DT_MENU};
     for (int i = 0; i < T_PILLS; i++) {
         s_t_pills[i] = uk_pill(scr, UK_F12, sel == i ? UK_RED : UK_LINE, UK_WHITE, labels[i]);
         lv_obj_align(s_t_pills[i], LV_ALIGN_TOP_MID, 0, 186 + i * 30);
     }
     static const char *const T_DESCS[T_PILLS] = {DT_TD_GO, DT_TD_HEAT, DT_TD_NEW, DT_TD_MENU};
-    centered(scr, UK_F12, UK_GRAY, T_DESCS[sel], UK_H - 20);
+    centered(scr, UK_F12, UK_GRAY, first_go && sel == 0 ? DT_TD_FIRST : T_DESCS[sel], UK_H - 20);
     uk_screen_swap(scr);
 }
 

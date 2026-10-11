@@ -469,8 +469,17 @@ static bool slipperworks_input(const kit_input_t *in) {
     switch (s_page) {
         case PG_TITLE:
             if (in->key == KIT_KEY_OK) {
-                if (in->long_press) break;  // 标题页长按不重复触发
-                if (s_sel == 0) to_work();
+                    if (in->long_press) break;  // 标题页长按不重复触发
+                if (s_sel == 0) {
+                    if (s_save.flags & 0x40u) {
+                        to_work();
+                    } else {
+                        // 第一次开工:先播开场剧,演完自动进工坊带新手教程
+                        s_save.flags |= 0x40u;
+                        sv_persist();
+                        story_show(SW_ST_OPEN, 1);
+                    }
+                }
                 else if (s_sel == 1) {
                     s_save.heat = (uint8_t)kit_heat_next(kit_heat_from(s_save.heat));
                     sv_persist();

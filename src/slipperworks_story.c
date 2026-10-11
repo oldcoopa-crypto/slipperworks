@@ -15,13 +15,13 @@ static const sw_story_step_t OPEN_STEPS[] = {
 };
 
 static const sw_story_step_t T1_STEPS[] = {{SW_W_GRANNY, DT_ST_T1, &slipperworks_voice_G_T_DROP}};
-static const sw_story_step_t T2_STEPS[] = {{SW_W_GRANNY, DT_ST_T2, &slipperworks_voice_G_T_MERGE}};
-static const sw_story_step_t T3_STEPS[] = {{SW_W_GRANNY, DT_ST_T3, &slipperworks_voice_G_T_BAG}};
-static const sw_story_step_t T4_STEPS[] = {{SW_W_GRANNY, DT_ST_T4, &slipperworks_voice_G_T_MENU}};
+static const sw_story_step_t T2_STEPS[] = {{SW_W_GRANNY, DT_ST_T2, 0}};
+static const sw_story_step_t T3_STEPS[] = {{SW_W_GRANNY, DT_ST_T3, 0}};
+static const sw_story_step_t T4_STEPS[] = {{SW_W_GRANNY, DT_ST_T4, 0}};
 static const sw_story_step_t PRAISE_STEPS[] = {{SW_W_GRANNY, DT_ST_PRAISE, &slipperworks_voice_G_PRAISE}};
-static const sw_story_step_t SHOP_STEPS[] = {{SW_W_GRANNY, DT_ST_SHOP, &slipperworks_voice_G_T_SHOP}};
-static const sw_story_step_t SELL_STEPS[] = {{SW_W_GRANNY, DT_ST_SELL, &slipperworks_voice_G_T_SELL}};
-static const sw_story_step_t JAM_STEPS[] = {{SW_W_GRANNY, DT_ST_JAM, &slipperworks_voice_G_T_HAM}};
+static const sw_story_step_t SHOP_STEPS[] = {{SW_W_GRANNY, DT_ST_SHOP, 0}};
+static const sw_story_step_t SELL_STEPS[] = {{SW_W_GRANNY, DT_ST_SELL, 0}};
+static const sw_story_step_t JAM_STEPS[] = {{SW_W_GRANNY, DT_ST_JAM, 0}};
 static const sw_story_step_t GRAT_STEPS[] = {
     {SW_W_GRANNY, DT_ST_GRAT1, &slipperworks_voice_G_GRAT1},
     {SW_W_GRANNY, DT_ST_GRAT2, &slipperworks_voice_G_GRAT2},
