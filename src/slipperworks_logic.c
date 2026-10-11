@@ -242,7 +242,9 @@ sw_buy_t slipperworks_buy(slipperworks_game_t *g, slipperworks_save_t *sv, uint8
         g->basket_lv++;  // 篮子升级:更宽,能合的档也更高
         sv->basket_lv = g->basket_lv;
     } else {
-        g->queue[g->queue_n++] = slipperworks_shop_tier[item];  // 排队等着丢
+        // 买鞋直接换到手里:绳子上立刻就是刚买的,手里的原鞋材排到队尾(不丢不亏)
+        g->queue[g->queue_n++] = g->cur;
+        g->cur = slipperworks_shop_tier[item];
     }
     return SW_BUY_OK;
 }
